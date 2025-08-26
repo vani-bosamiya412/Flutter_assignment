@@ -1,0 +1,31 @@
+Module - 4: Navigation and Routing
+
+1. Explain how the Navigator widget works in Flutter.
+In Flutter, navigation works like a stack (just like a stack of plates).
+Navigator widget manages this stack of screens (called routes).
+
+Key functions:
+Navigator.push() → Adds a new screen (route) on top of the stack.
+Navigator.pop() → Removes the current screen and goes back to the previous one.
+
+2. Describe the concept of named routes and their advantages over direct route navigation.
+Instead of creating routes manually with MaterialPageRoute, you can give each screen a name (string). Then, you navigate using those names.
+
+Advantages of Named Routes:
+Cleaner code → No need to write long route logic every time.
+Easier to manage → All routes are defined in one place.
+Better for big apps → When you have many screens, managing them with names is simpler.
+Supports arguments easily → You can pass data with route settings.
+
+3. Explain how data can be passed between screens using route arguments.
+Sometimes you need to send data (like user ID, product details, etc.) to another screen.
+
+Ways to pass data:
+(a) Using Constructor: Pass data directly when pushing: Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(data: "Hello")),);
+(b) Using Named Routes with Arguments: Send data: Navigator.pushNamed(context, '/details', arguments: "Hello from Home",);
+				       Recieve data: @override
+						     Widget build(BuildContext context) {
+  						       final String data = ModalRoute.of(context)!.settings.arguments as String;
+  						       return Scaffold(body: Center(child: Text(data)));
+						     }
+	
