@@ -1,0 +1,56 @@
+Module - 6: Working with Forms and User Input
+
+1. Explain the structure and purpose of forms in Flutter.
+In Flutter, forms are built using the Form widget.
+Purpose → To collect input from users (like text fields, passwords, email, etc.).
+Structure:
+Form → Parent widget holding everything.
+TextFormField / TextField → For user input.
+GlobalKey → Helps manage and validate the form.
+
+2. 2. Describe how controllers and listeners are used to manage form input.
+Controllers: Each input field can have a controller (e.g., TextEditingController). It lets you read and change the text inside a field.
+Listeners: You can attach listeners to controllers to know when the text changes. This helps in real-time validation or UI updates.
+
+3. List some common form validation techniques and provide examples.
+Validation means checking whether the input is correct (like valid email, non-empty password, etc.).
+Techniques:
+(1) Required Field Validation: Ensure the user does not leave a field empty.
+validator: (value) {
+  if (value == null || value.isEmpty) {
+    return 'This field cannot be empty';
+  }
+  return null;
+}
+
+(2) Email Validation: Check if the input is a valid email format.
+validator: (value) {
+  if (!value!.contains('@')) {
+    return 'Enter a valid email';
+  }
+  return null;
+}
+
+(3) Password Validation: Enforce minimum length or rules.
+validator: (value) {
+  if (value!.length < 6) {
+    return 'Password must be at least 6 characters';
+  }
+  return null;
+}
+
+(4) Number Validation: Check if input is numeric.
+validator: (value) {
+  if (int.tryParse(value!) == null) {
+    return 'Enter a valid number';
+  }
+  return null;
+}
+
+(5) Custom Rules: Example: username should not contain spaces.
+validator: (value) {
+  if (value!.contains(' ')) {
+    return 'No spaces allowed';
+  }
+  return null;
+}
