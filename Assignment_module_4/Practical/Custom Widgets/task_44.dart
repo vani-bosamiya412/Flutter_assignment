@@ -45,9 +45,9 @@ class ProfileScreen44 extends StatelessWidget {
   ProfileScreen44({super.key});
 
   final List<Map<String, String>> products = [
-    {"name": "Wireless Headphone", "price": "\₹1,699", "image": "https://m.media-amazon.com/images/I/51FNnHjzhQL._UF1000,1000_QL80_.jpg"},
-    {"name": "Smart Watch", "price": "\₹1,449", "image": "https://www.boat-lifestyle.com/cdn/shop/files/Artboard_12_copy_3.png?v=1725944855"},
-    {"name": "Sneakers", "price": "\₹2,699 ", "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/395829/01/sv05/fnd/IND/fmt/png/Carina-Slim-Perf-Women's-Sneakers"},
+    {"name": "Wireless Headphone", "price": "₹1,699", "image": "https://m.media-amazon.com/images/I/51FNnHjzhQL._UF1000,1000_QL80_.jpg"},
+    {"name": "Smart Watch", "price": "₹1,449", "image": "https://www.boat-lifestyle.com/cdn/shop/files/Artboard_12_copy_3.png?v=1725944855"},
+    {"name": "Sneakers", "price": "₹2,699 ", "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/395829/01/sv05/fnd/IND/fmt/png/Carina-Slim-Perf-Women's-Sneakers"},
   ];
 
   @override
