@@ -1,0 +1,74 @@
+1. Difference Between Local Storage Options (shared_preferences, SQLite, Hive):
+
+   a) shared_preferences:
+      - Key-value storage for small amounts of data.
+      - Stores simple data types like int, double, bool, String, and StringList.
+      - Data persists across app launches but is not suitable for complex or relational data.
+      - Easy to use, ideal for storing user settings, flags, or tokens.
+
+   b) SQLite:
+      - Relational database for structured data.
+      - Supports complex queries, joins, indexing, and transactions.
+      - Data stored in tables with rows and columns.
+      - Suitable for apps requiring structured storage like contacts, notes, or inventory management.
+
+   c) Hive:
+      - Lightweight, NoSQL database for Flutter.
+      - Stores data in boxes (similar to tables but more flexible).
+      - Very fast and works offline efficiently.
+      - Ideal for caching data, offline apps, or apps requiring high-speed read/write of structured/unstructured data.
+
+2. CRUD Operations and Their Implementation:
+
+   CRUD stands for Create, Read, Update, Delete.
+
+   a) SQLite Example:
+      - Create: Insert data into a table.
+        ```dart
+        await db.insert('users', {'name': 'Vani', 'age': 22});
+        ```
+      - Read: Query data from a table.
+        ```dart
+        List<Map> users = await db.query('users');
+        ```
+      - Update: Modify existing data.
+        ```dart
+        await db.update('users', {'age': 23}, where: 'name = ?', whereArgs: ['Vani']);
+        ```
+      - Delete: Remove data from a table.
+        ```dart
+        await db.delete('users', where: 'name = ?', whereArgs: ['Vani']);
+        ```
+
+   b) Hive Example:
+      - Create: Add data to a box.
+        ```dart
+        var box = await Hive.openBox('userBox');
+        await box.put('name', 'Vani');
+        ```
+      - Read: Retrieve data from a box.
+        ```dart
+        var name = box.get('name');
+        ```
+      - Update: Modify existing data.
+        ```dart
+        await box.put('name', 'Vani Bosamiya');
+        ```
+      - Delete: Remove data from a box.
+        ```dart
+        await box.delete('name');
+        ```
+
+3. Advantages and Use Cases of shared_preferences:
+
+   Advantages:
+   - Simple API and easy to implement.
+   - Perfect for storing lightweight data like user preferences.
+   - Data persists even when the app is closed or restarted.
+   - Minimal overhead, fast for small key-value pairs.
+
+   Use Cases:
+   - Storing user login state (isLoggedIn = true/false).
+   - Saving theme preferences (dark mode/light mode).
+   - Caching small flags or tokens.
+   - Any small, non-relational, persistent data that doesn’t require complex queries.
