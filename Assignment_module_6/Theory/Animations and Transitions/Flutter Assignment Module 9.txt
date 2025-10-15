@@ -1,0 +1,53 @@
+1. Difference between Implicit and Explicit Animations in Flutter.
+- Implicit Animations:
+  * These are pre-built Flutter widgets that automatically animate changes in their properties.
+  * You just specify the start and end values, and Flutter handles the animation logic internally.
+  * Example widgets: AnimatedContainer, AnimatedOpacity, AnimatedAlign.
+  * No need to manually use AnimationController.
+  * Easier to use but offers less control over animation behavior.
+
+- Explicit Animations:
+  * These animations require manual control using AnimationController and Animation objects.
+  * The developer defines how the animation should progress over time.
+  * Example: Using AnimationController with Tween and AnimatedBuilder.
+  * Offers fine-grained control, such as starting, stopping, or reversing animations manually.
+  * More flexible but requires more setup.
+
+
+
+2. Purpose of AnimationController and Its Usage:
+- AnimationController is a special class in Flutter that controls an animation's timing and progress.
+- It acts as the “engine” that drives animations forward.
+- The controller generates values over a given duration, which can then be applied to UI properties.
+
+Usage:
+  * Must be used inside a State class that mixes in SingleTickerProviderStateMixin (or TickerProviderStateMixin).
+  * Define duration and vsync.
+  * Call controller.forward(), controller.reverse(), or controller.stop() to control the animation.
+  * Often used with Tween and AnimatedBuilder or CustomPainter to update UI dynamically.
+
+Example:
+  AnimationController controller = AnimationController(
+    duration: Duration(seconds: 2),
+    vsync: this,
+  );
+  controller.forward();
+
+
+
+3. Concept of Hero Animations in Flutter:
+- Hero animation is a type of shared element transition between two routes (pages).
+- It allows a widget (like an image or button) to smoothly transition from one screen to another.
+- Flutter matches the Hero widgets on both pages using the same 'tag' and animates them automatically.
+
+Usage:
+  * Wrap the widget with Hero widget and assign a unique tag.
+  * Use the same tag on the destination screen.
+
+Example:
+  Hero(
+    tag: 'profilePic',
+    child: Image.asset('assets/profile.png'),
+  );
+
+- When navigating to a new screen with the same Hero tag, Flutter animates the widget’s movement between screens.
