@@ -1,4 +1,5 @@
 // Implement a news feed app that retrieves and displays articles from an API.
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -61,7 +62,7 @@ class _NewsScreenState extends State<NewsScreen> {
                 title: Text(article['title'] ?? 'No title'),
                 subtitle: Text(article['description'] ?? 'No description'),
                 onTap: () {
-                  // You can navigate to a detail page here
+                  
                 },
               ),
             );

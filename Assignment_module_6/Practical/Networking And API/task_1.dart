@@ -25,7 +25,6 @@ class _WeatherAppState extends State<WeatherApp> {
   bool isLoading = false;
   bool hasError = false;
 
-  // Replace with your OpenWeatherMap API key
   final String apiKey = "c2267ecdd71ace0c9ad79068f16dd8de";
 
   Future<void> fetchWeather(String cityName) async {
