@@ -1,0 +1,40 @@
+1.  App Release Process for iOS and Android
+
+iOS (Apple): - You need an Apple Developer Account. - Create an App ID
+and set up certificates and provisioning profiles. - Build the app in
+release mode using Xcode or Flutter. - Upload the build to App Store
+Connect using Xcode or Transporter. - Add app information: screenshots,
+description, category, privacy policy. - Submit the app for review.
+After approval, it will go live on the App Store.
+
+Android (Google Play): - You need a Google Play Developer Account. -
+Create a new app in Google Play Console. - Generate an Android App
+Bundle (AAB) in release mode. - Upload the AAB to Google Play Console. -
+Add required assets: screenshots, description, icons, feature
+graphics. - Submit for review. After approval, it will be published.
+
+2.  Steps to Generate App Bundles and APKs
+
+APK (Android Package): - APK is used mostly for testing. - Run: flutter
+build apk –release - The output APK will be in
+build/app/outputs/flutter-apk/
+
+App Bundle (AAB) – Recommended for Play Store: - AAB is required for
+uploading to Google Play. - Run: flutter build appbundle –release - The
+output AAB will be in build/app/outputs/bundle/release/
+
+iOS Build: - Run: flutter build ios –release - Open
+ios/Runner.xcworkspace in Xcode. - Archive the project and upload to App
+Store Connect.
+
+3.  Best Practices for Submitting Apps
+
+App Store (iOS): - Use clear and high-quality screenshots. - Make sure
+your app follows Apple’s design and privacy rules. - Test the app
+thoroughly on real devices. - Write a clear description and app
+purpose. - Add a strong privacy policy.
+
+Google Play (Android): - Optimize app performance to avoid crashes. -
+Use good-quality graphics and screenshots. - Follow Play Store content
+policies. - Add a proper app icon and feature graphic. - Test on
+different Android devices before uploading.

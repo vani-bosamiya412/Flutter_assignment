@@ -1,0 +1,75 @@
+Steps to Publish a Flutter App on the Google Play Store
+
+1.  Prepare Your App for Release
+
+-   Update your app version in pubspec.yaml.
+-   Remove debug logs and test code.
+-   Add app icons using the flutter_launcher_icons package.
+-   Ensure the app works properly on real devices.
+
+2.  Create a Google Play Developer Account
+
+-   Go to Google Play Console.
+-   Pay the one-time registration fee.
+-   Complete the account setup.
+
+3.  Create a New Application
+
+-   Click “Create App” in Play Console.
+-   Select your app name, default language, and app type.
+-   Accept all policies.
+
+4.  App Bundle Generation (AAB)
+
+-   Open your Flutter project.
+-   Run: flutter build appbundle –release
+-   The AAB file will be in: build/app/outputs/bundle/release/
+
+5.  App Signing Setup
+
+-   Google Play uses Play App Signing by default.
+-   If needed, generate your keystore using: keytool -genkey -v
+    -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias
+    upload
+-   Add the keystore path and passwords inside android/key.properties.
+-   Flutter will use this automatically during the build.
+
+6.  Upload the AAB to Google Play Console
+
+-   Go to “Production” → “Create New Release”.
+-   Upload your .aab file.
+-   Add Release Notes.
+
+7.  Complete App Details
+
+-   App name, short description, long description
+-   App category: App or Game + Free or Paid
+-   Contact details (email required)
+-   Privacy policy URL (must be valid)
+
+8.  Add Store Listing Assets
+
+-   App icon (512×512)
+-   Feature graphic (1024×500)
+-   Screenshots for phone and tablet
+-   Optional: Promo video
+
+9.  Fill Content Rating Questionnaire
+
+-   Answer questions honestly.
+-   Generate rating.
+
+10. Set Up App Pricing and Distribution
+
+-   Choose countries where the app should be available.
+-   Select whether it’s free or paid.
+
+11. Submit for Review
+
+-   Go to “Production” → “Review and rollout”.
+-   Submit the app for Google review.
+-   Approval usually takes a few hours to a few days.
+
+12. After Approval
+
+-   Your app becomes publicly available on the Google Play Store.
